@@ -1,24 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import TodoItem from "./components/TodoItem";
+
+import todos from "./todosData";
 
 function App() {
+  const todoList = todos.map((item) => <TodoItem key={item.id} item={item} />);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="todo-list">
+      <h1 style={{ margin: 5 }}>TODOS</h1>
+      {todoList}
     </div>
   );
 }
